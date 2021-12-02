@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: linear-gradient(90deg, rgb(223, 8, 37), rgb(83, 4, 79)); */
+    background: linear-gradient(90deg, rgb(124, 168, 219), rgb(92, 35, 90));
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* #menu {
+    position: absolute;
+    width: 4%;
+    left: 2%;
+    top: 2%;
+} */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 5px;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+
+
+.player {
+    position: fixed;
+    /* background: rgb(163, 162, 158); */
+    background: linear-gradient(90deg, rgb(117, 98, 117), rgb(212, 211, 212));
+    margin-top: 10px;
+    left: 80%;
+    top: 10%;
+    /* top: 120px; */
+    width: 17%;
+    height: 80%;
+    font-size: 3ch;
+
+
+    color: black;
+    margin-right: 70%;
+}
+
+.score,
+.playerName {
+    margin-top: 5%;
+    /* color: white; */
+
+}
+
+h3 {
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+section {
+    align-items: left;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 7rem);
+    grid-template-rows: repeat(4, 7rem);
+    grid-gap: 2rem;
+    perspective: 800px;
+}
+
+.sction5x5 {
+    /* background: crimson; */
+    grid-template-columns: repeat(5, 6rem);
+    grid-template-rows: repeat(5, 6rem);
+
+}
+
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1.5s cubic-bezier(0.175, 0.0885, 0.32, 1.275);
+    box-shadow: rgba(0, 0, 0, 0.7) 5px 10px 15px;
+}
+
+.back,
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.back {
+    background-color: rgb(173, 28, 28);
+    backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.gameSize {
+    width: 30%;
+}
+
+.startBtn {
+    background-color: white;
+    color: black;
+    width: 25%;
+    padding: 20px;
+    border: 5px solid #050505;
+}
+
+.startBtn:hover {
+    background-color: #1f6980;
+    color: white;
+}
+
+.selectSize1 {
+    background-color: rgb(249, 249, 250);
+    width: 30%;
+    height: 15%;
+    border: 6px solid transparent;
+}
+
+.popup {
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    background: #8d2e2e;
+    border-radius: 15px;
+    text-align: center;
+    width: 60%;
+    position: relative;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+hr {
+    size: 8;
+    width: "90%";
+}
+
+
+*/ .popup {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #8d0628;
+}

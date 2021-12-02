@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="popup">
+        <h1>Welcome to memory Card game</h1><br>
+        <h3>Please insert names and select borad size</h3>
+        <input type="text" placeholder="Player1" name="Player1" id="Player1" required>
+        <input type="text" placeholder="Player2" name="Player2" id="Player2" required>
+        <br>
+
+        <select name="gameSize" , id="selectSize" class="selectSize1">
+            <option value="4">4X4</option>
+            <option value="5">5X5</option>
+        </select>
+        <!-- 
+        <div class="content-2">
+
+        </div> -->
+        <button id="play-again " class="startBtn" onclick="startGame()">
+            Play😄</a>
+        </button>
+    </div>
+
+    <div class="player hidden">
+        <div id="player1div">
+            <h2>Name:</h2>
+            <h2 id="playerName1" class="playerName">playerName</h2>
+            <p class="current-label"></p>
+            <h2>score:</h2>
+            <p id="score1" class="score">22</p>
+            <h2>victory points:</h2>
+            <p id="victory1">0</p>
+        </div>
+        <hr>
+        <div id="player1div">
+            <h2>Name:</h2>
+            <h2 id="playerName2" class="playerName">playerName</h2>
+            <p class="current-label"></p>
+            <h2>score:</h2>
+            <p id="score2" class="score">22</p>
+            <h2>victory points:</h2>
+            <p id="victory2">0</p>
+        </div>
+    </div>
+
+    <section></section>
+
+    <script type="text/javascript" src="./scripts.js"></script>
+
+</body>
+
+</html>
