@@ -24,24 +24,6 @@ let match = 0;
 const sectionCard = document.querySelector('section');
 const enterwindws = document.querySelector('.popup');
 
-var playersListJson = [{
-        "Name": "John",
-        "Point": 10
-    },
-    {
-        "Name": "Anna",
-        "Point": 26
-    },
-    {
-        "Name": "Peter",
-        "Point": 42
-    }
-]
-
-playersListJson.push({
-    "Name": "Barak",
-    "Point": 11
-});
 
 const scores = [0, 0];
 const victories = [0, 0];
@@ -49,6 +31,7 @@ let activePlayer = 0;
 var size = 0;
 var scoreNumber = 10;
 var cardData;
+let p;
 
 //Generate the data
 const getData4x4 = () => [{
@@ -290,7 +273,7 @@ const checkCards = (e) => {
                     scores[0] = scores[0] + 1;
                     score1.innerHTML = scores[0]
                 } else {
-                    scores[1] = scores[1] + 1;
+                    scores[1]++;
                     score2.innerHTML = scores[1];
                 }
 
@@ -319,6 +302,7 @@ const checkCards = (e) => {
     }
 }
 
+
 //Restart
 const restart = () => {
     match = 0;
@@ -343,8 +327,9 @@ const restart = () => {
             sectionCard.style.pointerEvents = 'all';
             console.log('cards update..');
         }, 1000)
-
     });
+
+
 }
 
 const startGame = () => {
@@ -358,19 +343,25 @@ const startGame = () => {
     score1.innerHTML = scores[0];
     score2.innerHTML = scores[1];
 
-    size = mylist.options[mylist.selectedIndex].value;
-    if (size == 5) {
-        sectionCard.classList.add('sction5x5');
-    }
-    console.log('size from html ' + size);
-    enterwindws.classList.add('hidden');
-    cardGenerator();
-}
-
-function updateJson(name) {
-    for (var i = 0; i < playersListJson.length; i++) {
-        if (playersListJson[i].Name == name) {
-            playersListJson[i].Point++;
+    p = new Promise((resolve, reject) => {
+        size = mylist.options[mylist.selectedIndex].value;
+        if (size == 5) {
+            sectionCard.classList.add('sction5x5');
+            cardGenerator();
+            enterwindws.classList.add('hidden');
+            resolve();
+        } else if (size == 4) {
+            console.log('size from html ' + size);
+            enterwindws.classList.add('hidden');
+            cardGenerator();
+        } else {
+            reject('Error');
         }
-    }
-}
+    })
+
+    p.then(() => {
+        console.log("The " + boardSize + " has been loaded");
+    }).catch((message) => {
+        console.log(message);
+    });
+};
